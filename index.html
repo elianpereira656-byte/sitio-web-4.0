@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Inventario - Frontend</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 30px auto; padding: 20px; background: #f4f4f9; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        input { display: block; width: 100%; padding: 8px; margin-bottom: 10px; box-sizing: border-box; }
+        button { background: #007bff; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 4px; }
+        button:hover { background: #0056b3; }
+        ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2>Agregar Nuevo Producto</h2>
+        <form id="productForm">
+            <input type="text" id="nombre" placeholder="Nombre del producto" required>
+            <input type="number" id="precio" placeholder="Precio" step="0.01" required>
+            <input type="number" id="stock" placeholder="Stock disponible" required>
+            <button type="submit">Guardar Producto</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Lista de Productos</h2>
+        <button onclick="obtenerProductos()">Actualizar Lista</button>
+        <ul id="listaProductos"></ul>
+    </div>
+
+    <!-- Enlazamos nuestro script principal -->
+    <script type="module" src="./src/app.js"></script>
+</body>
+</html>
